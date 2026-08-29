@@ -1,0 +1,52 @@
+Phishing Website Detection - Corrected Final Results
+
+Dataset
+-------
+Rows: 11054
+Raw columns: 32
+Target: class
+Target values: -1 (phishing), 1 (legitimate)
+Dropped identifier: Index
+Missing values: 0
+Duplicate rows: 0
+
+Engineered Features
+-------------------
+Suspicion Score: count of -1 values across the 30 original website features
+Safe Score: count of +1 values across the 30 original website features
+Neutral Score: count of 0 values across the 30 original website features
+
+Baseline Models
+---------------
+              Model  Accuracy  Precision   Recall  F1 Score  Phishing Recall
+Logistic Regression  0.940299   0.940276 0.940299  0.940259         0.926456
+      Random Forest  0.973768   0.973870 0.973768  0.973738         0.960163
+                SVM  0.962913   0.963041 0.962913  0.962861         0.945863
+                KNN  0.944821   0.944800 0.944821  0.944804         0.934627
+   Isolation Forest  0.477160   0.477705 0.477160  0.477423         0.414709
+
+Best Baseline Model
+-------------------
+Random Forest
+Accuracy: 0.9738
+Weighted F1: 0.9737
+
+Tuned Random Forest
+-------------------
+Best parameters: {'n_estimators': 250, 'min_samples_split': 2, 'min_samples_leaf': 1, 'max_features': 'sqrt', 'max_depth': 20, 'bootstrap': False}
+Accuracy: 0.9747
+Precision: 0.9748
+Recall: 0.9747
+Weighted F1: 0.9746
+Phishing Recall: 0.9622
+Confusion matrix [-1,1]: [[942, 37], [19, 1213]]
+
+Feature Selection
+-----------------
+Top 15 features retained out of 33.
+Accuracy: 0.9692
+Weighted F1: 0.9692
+
+Conclusion
+----------
+The tuned Random Forest is the strongest final model. Feature selection reduces the input set to 15 features while preserving performance close to the full tuned model.

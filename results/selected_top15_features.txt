@@ -1,0 +1,15 @@
+HTTPS
+AnchorURL
+Safe Score
+Suspicion Score
+WebsiteTraffic
+SubDomains
+LinksInScriptTags
+PrefixSuffix-
+Neutral Score
+LinksPointingToPage
+RequestURL
+DomainRegLen
+ServerFormHandler
+AgeofDomain
+UsingIP
