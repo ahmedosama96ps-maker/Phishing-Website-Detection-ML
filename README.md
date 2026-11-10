@@ -113,6 +113,10 @@ Phishing-Website-Detection-ML/
 │
 ├── .gitignore
 ├── requirements.txt
+├── tests/
+│   └── test_repository.py
+├── .github/workflows/
+│   └── notebook-integrity.yml
 └── README.md
 ```
 
@@ -208,6 +212,10 @@ The archived experiment reported a tuned Random Forest **weighted F1-score of ap
 
 The project connects machine learning experimentation with a practical cybersecurity use case and realistic deployment concepts.
 
+
+## Automated integrity checks
+
+GitHub Actions checks the CSV schema and sample count, parses every Python code cell, and confirms that executable fitting/evaluation statements are present. These checks **do not** execute the full training experiment or independently validate model accuracy.
 
 ## Reproducibility and evaluation caveats
 
